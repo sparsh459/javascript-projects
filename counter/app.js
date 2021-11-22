@@ -8,6 +8,7 @@ const btns = document.querySelectorAll(".btn"); // returns a node list, most arr
 btns.forEach(function (btn) {  // // passing a parameter for accessing items in list
   btn.addEventListener("click", function (e) {  // passing a parameter for know which button is clicked
     const styles = e.currentTarget.classList; // assigning the list of classes the current clicked button has []
+    // changing the count accordingly when the button is clicked
     if (styles.contains("decrease")) {
       count--;
     } else if (styles.contains("increase")) {
@@ -26,7 +27,7 @@ btns.forEach(function (btn) {  // // passing a parameter for accessing items in 
     if (count === 0) {
       value.style.color = "#222";
     }
-    
+
     value.textContent = count;  // changing the value on the screen
   });
 });
