@@ -1,4 +1,4 @@
-// local reviews data
+// local reviews data  // predetermined data
 const reviews = [
     {
       id: 1,
@@ -47,10 +47,11 @@ const reviews = [
   const nextBtn = document.querySelector(".next-btn");
   const randomBtn = document.querySelector(".random-btn");
   
-  // set starting item
+  // set starting item, representing 1st element in array
   let currentItem = 0;
   
   // load initial item
+  // replacing the items in dom with items in array above
   window.addEventListener("DOMContentLoaded", function () {
     const item = reviews[currentItem];
     img.src = item.img;
@@ -59,6 +60,7 @@ const reviews = [
     info.textContent = item.text;
   });
   
+  // aking this when we press next or random or prev button value of i will change
   // show person based on item
   function showPerson(person) {
     const item = reviews[person];
@@ -67,6 +69,7 @@ const reviews = [
     job.textContent = item.job;
     info.textContent = item.text;
   }
+
   // show next person
   nextBtn.addEventListener("click", function () {
     currentItem++;
@@ -75,6 +78,7 @@ const reviews = [
     }
     showPerson(currentItem);
   });
+
   // show prev person
   prevBtn.addEventListener("click", function () {
     currentItem--;
@@ -83,6 +87,7 @@ const reviews = [
     }
     showPerson(currentItem);
   });
+  
   // show random person
   randomBtn.addEventListener("click", function () {
     console.log("hello");
